@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: postgres_db
+
+development:
+  <<: *default
+  username: postgres
+  password: postgres
+  database: bootcamp_development
+
+test:
+  <<: *default
+  username: postgres
+  password: postgres
+  database: bootcamp_test
+
+production:
+  <<: *default
+  username: postgres
+  password: postgres
+  database: bootcamp_production
